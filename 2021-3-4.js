@@ -3,8 +3,6 @@
 // 输出：[7,0,8]
 // 解释：342 + 465 = 807.
 
-const { createSourceEventStream } = require("graphql");
-
 // 输入：l1 = [0], l2 = [0]
 // 输出：[0]
 
