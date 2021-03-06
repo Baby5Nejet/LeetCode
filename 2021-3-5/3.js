@@ -1,4 +1,4 @@
-
+// https://leetcode-cn.com/problems/longest-palindromic-substring/submissions/
 // 给你一个字符串 s，找到 s 中最长的回文子串。
 
 // 示例 1：
@@ -20,6 +20,24 @@
 // s 仅由数字和英文字母（大写和/或小写）组成
 //  * @param {string} s
 //  * @return {string}
+let s = 'fdgdfaeff'
 var longestPalindrome = function(s) {
-
+  let list = [...s]
+  // console.log(list)
+  let result = [...list[0]]
+  for(let m = 0;m<list.length;m++){
+    for(let n = m+1;n<list.length;n++){
+      if(list[m] === list[n]){
+        let a = list.slice(m,n+1)
+        let x = a.join('')
+        let y = a.reverse().join('')
+        console.log(x,y,x===y,a)
+        result = x === y&&a.length > result.length ? x.split(''): result
+      }
+    }
+  }
+  console.log('result',result)
+  return result
+  
 };
+longestPalindrome(s)
