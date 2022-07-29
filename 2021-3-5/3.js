@@ -21,23 +21,33 @@
 //  * @param {string} s
 //  * @return {string}
 let s = 'fdgdfaeff'
+// let s = "babad"
 var longestPalindrome = function(s) {
   let list = [...s]
   // console.log(list)
-  let result = [...list[0]]
-  for(let m = 0;m<list.length;m++){
-    for(let n = m+1;n<list.length;n++){
-      if(list[m] === list[n]){
-        let a = list.slice(m,n+1)
-        let x = a.join('')
-        let y = a.reverse().join('')
-        console.log(x,y,x===y,a)
-        result = x === y&&a.length > result.length ? x.split(''): result
+  let result = list[0]
+  console.log('length',list,result,list.length ===1)
+  if(list.length===1){
+    console.log('111',result)
+    return result
+  }else{
+    for(let m = 0;m<list.length;m++){
+      for(let n = list.length-1;n>m;n--){
+        if(list[m] === list[n]){
+          let a = list.slice(m,n+1)
+          let x = a.join('')
+          let y = a.reverse().join('')
+          console.log('222222',x,y,x===y,a)
+          if(x===y && x.length > result.length){
+              result = x
+              break
+          }
+          // result = x===y && x.length > result.length ? x break : result
+        }
       }
     }
   }
-  console.log('result',result)
+  console.log('44444',result)
   return result
-  
 };
 longestPalindrome(s)
