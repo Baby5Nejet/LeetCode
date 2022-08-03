@@ -9,3 +9,6 @@ function curry (fn){
     }
   }
 }
+
+
+// console.log(curry(add)) // 6;
