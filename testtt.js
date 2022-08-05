@@ -1,3 +1,6 @@
-var arr = [1, 2, 3]
+function add (){
+  console.log (args)
+}
 
-console.log(arr.valueOf())
+
+add(1,2)
